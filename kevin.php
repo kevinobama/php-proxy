@@ -1,13 +1,9 @@
 <?php
 
-$ch = curl_init(); 
-curl_setopt($ch, CURLOPT_URL, 'https://www.youtube.com'); 
-curl_setopt($ch, CURLOPT_HEADER, 1); 
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
-curl_setopt($ch, CURLOPT_HTTPPROXYTUNNEL, 1); 
-//curl_setopt($ch, CURLOPT_PROXY, 'fakeproxy.com:1080'); 
-curl_setopt($ch, CURLOPT_PROXYUSERPWD, 'user:password'); 
-$data = curl_exec(); 
-curl_close($ch);
+    $curl = curl_init();
+    curl_setopt ($curl, CURLOPT_URL, "http://www.php.net");
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
-echo($data);
+    $result = curl_exec ($curl);
+    curl_close ($curl);
+    print $result;
